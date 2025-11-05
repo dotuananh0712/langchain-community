@@ -63,7 +63,6 @@ def test_compatible_vectorstore_documentation() -> None:
         "DashVector",
         "DatabricksVectorSearch",
         "TiDBVectorStore",
-        "DeepLake",
         "Dingo",
         "DocumentDBVectorSearch",
         "ElasticVectorSearch",

@@ -84,9 +84,6 @@ if TYPE_CHECKING:
     from langchain_community.vectorstores.databricks_vector_search import (
         DatabricksVectorSearch,
     )
-    from langchain_community.vectorstores.deeplake import (
-        DeepLake,
-    )
     from langchain_community.vectorstores.dingo import (
         Dingo,
     )
@@ -292,7 +289,6 @@ __all__ = [
     "CouchbaseVectorStore",
     "DashVector",
     "DatabricksVectorSearch",
-    "DeepLake",
     "Dingo",
     "DistanceStrategy",
     "DocArrayHnswSearch",
@@ -386,7 +382,6 @@ _module_lookup = {
     "CouchbaseVectorStore": "langchain_community.vectorstores.couchbase",
     "DashVector": "langchain_community.vectorstores.dashvector",
     "DatabricksVectorSearch": "langchain_community.vectorstores.databricks_vector_search",  # noqa: E501
-    "DeepLake": "langchain_community.vectorstores.deeplake",
     "Dingo": "langchain_community.vectorstores.dingo",
     "DistanceStrategy": "langchain_community.vectorstores.kinetica",
     "DocArrayHnswSearch": "langchain_community.vectorstores.docarray",

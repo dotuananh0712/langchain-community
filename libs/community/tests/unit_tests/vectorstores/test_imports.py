@@ -29,7 +29,6 @@ EXPECTED_ALL = [
     "CouchbaseVectorStore",
     "DashVector",
     "DatabricksVectorSearch",
-    "DeepLake",
     "Dingo",
     "DistanceStrategy",
     "DocArrayHnswSearch",
