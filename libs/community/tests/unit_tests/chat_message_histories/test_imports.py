@@ -9,7 +9,6 @@ EXPECTED_ALL = [
     "FileChatMessageHistory",
     "FirestoreChatMessageHistory",
     "MomentoChatMessageHistory",
-    "Neo4jChatMessageHistory",
     "PostgresChatMessageHistory",
     "RedisChatMessageHistory",
     "RocksetChatMessageHistory",

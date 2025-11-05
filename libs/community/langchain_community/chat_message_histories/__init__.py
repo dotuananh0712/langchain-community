@@ -46,9 +46,6 @@ if TYPE_CHECKING:
     from langchain_community.chat_message_histories.momento import (
         MomentoChatMessageHistory,
     )
-    from langchain_community.chat_message_histories.neo4j import (
-        Neo4jChatMessageHistory,
-    )
     from langchain_community.chat_message_histories.postgres import (
         PostgresChatMessageHistory,
     )
@@ -92,7 +89,6 @@ __all__ = [
     "FileChatMessageHistory",
     "FirestoreChatMessageHistory",
     "MomentoChatMessageHistory",
-    "Neo4jChatMessageHistory",
     "PostgresChatMessageHistory",
     "RedisChatMessageHistory",
     "RocksetChatMessageHistory",
@@ -116,7 +112,6 @@ _module_lookup = {
     "FileChatMessageHistory": "langchain_community.chat_message_histories.file",
     "FirestoreChatMessageHistory": "langchain_community.chat_message_histories.firestore",  # noqa: E501
     "MomentoChatMessageHistory": "langchain_community.chat_message_histories.momento",
-    "Neo4jChatMessageHistory": "langchain_community.chat_message_histories.neo4j",
     "PostgresChatMessageHistory": "langchain_community.chat_message_histories.postgres",
     "RedisChatMessageHistory": "langchain_community.chat_message_histories.redis",
     "RocksetChatMessageHistory": "langchain_community.chat_message_histories.rocksetdb",
