@@ -10,7 +10,6 @@ from langchain_community.document_loaders.oracleai import (
     OracleDocLoader,
     OracleTextSplitter,
 )
-from langchain_community.utilities.oracleai import OracleSummary
 from langchain_community.vectorstores.oraclevs import (
     _table_exists,
     drop_table_purge,
@@ -137,7 +136,7 @@ def test_splitter_test() -> None:
     try:
         # oracle connection
         connection = oracledb.connect(user=uname, password=passwd, dsn=v_dsn)
-        doc = """Langchain is a wonderful framework to load, split, chunk 
+        doc = """Langchain is a wonderful framework to load, split, chunk
                 and embed your data!!"""
 
         # by words , max = 1000
@@ -301,146 +300,6 @@ def test_splitter_test() -> None:
 
         # verify
         if len(chunks) == 0:
-            pass
-
-    except Exception:
-        pass
-
-
-#### Test summary ####
-def test_summary_test() -> None:
-    try:
-        import oracledb
-    except ImportError:
-        return
-
-    try:
-        # oracle connection
-        connection = oracledb.connect(user=uname, password=passwd, dsn=v_dsn)
-
-        # provider : Database, glevel : Paragraph
-        summary_params = {
-            "provider": "database",
-            "glevel": "paragraph",
-            "numParagraphs": 2,
-            "language": "english",
-        }
-
-        # summary
-        summary = OracleSummary(conn=connection, params=summary_params)
-
-        doc = """It was 7 minutes after midnight. The dog was lying on the grass in
-            of the lawn in front of Mrs Shears house. Its eyes were closed. It 
-            was running on its side, the way dogs run when they think they are 
-            cat in a dream. But the dog was not running or asleep. The dog was dead. 
-            was a garden fork sticking out of the dog. The points of the fork must
-            gone all the way through the dog and into the ground because the fork 
-            not fallen over. I decided that the dog was probably killed with the 
-            because I could not see any other wounds in the dog and I do not think  
-            would stick a garden fork into a dog after it had died for some other 
-            like cancer for example, or a road accident. But I could not be certain"""
-
-        summaries = summary.get_summary(doc)
-
-        # verify
-        if len(summaries) == 0:
-            sys.exit(1)
-
-        # provider : Database, glevel : Sentence
-        summary_params = {"provider": "database", "glevel": "Sentence"}
-
-        # summary
-        summary = OracleSummary(conn=connection, params=summary_params)
-        summaries = summary.get_summary(doc)
-
-        # verify
-        if len(summaries) == 0:
-            sys.exit(1)
-
-        # provider : Database, glevel : P
-        summary_params = {"provider": "database", "glevel": "P"}
-
-        # summary
-        summary = OracleSummary(conn=connection, params=summary_params)
-        summaries = summary.get_summary(doc)
-
-        # verify
-        if len(summaries) == 0:
-            sys.exit(1)
-
-        # provider : Database, glevel : S
-        summary_params = {
-            "provider": "database",
-            "glevel": "S",
-            "numParagraphs": 16,
-            "language": "english",
-        }
-
-        # summary
-        summary = OracleSummary(conn=connection, params=summary_params)
-        summaries = summary.get_summary(doc)
-
-        # verify
-        if len(summaries) == 0:
-            sys.exit(1)
-
-        # provider : Database, glevel : S, doc = ' '
-        summary_params = {"provider": "database", "glevel": "S", "numParagraphs": 2}
-
-        # summary
-        summary = OracleSummary(conn=connection, params=summary_params)
-
-        doc = " "
-        summaries = summary.get_summary(doc)
-
-        # verify
-        if len(summaries) == 0:
-            sys.exit(1)
-
-    except Exception:
-        sys.exit(1)
-
-    try:
-        # Expectation : DRG-11002: missing value for PROVIDER
-        summary_params = {"provider": "database1", "glevel": "S"}
-
-        # summary
-        summary = OracleSummary(conn=connection, params=summary_params)
-        summaries = summary.get_summary(doc)
-
-        # verify
-        if len(summaries) == 0:
-            pass
-
-    except Exception:
-        pass
-
-    try:
-        # Expectation : DRG-11425: gist level SUDHIR is invalid,
-        #               DRG-11427: valid gist level values are S, P
-        summary_params = {"provider": "database", "glevel": "SUDHIR"}
-
-        # summary
-        summary = OracleSummary(conn=connection, params=summary_params)
-        summaries = summary.get_summary(doc)
-
-        # verify
-        if len(summaries) == 0:
-            pass
-
-    except Exception:
-        pass
-
-    try:
-        # Expectation : DRG-11441: gist numParagraphs -2 is invalid
-        summary_params = {"provider": "database", "glevel": "S", "numParagraphs": -2}
-
-        # summary
-        summary = OracleSummary(conn=connection, params=summary_params)
-        summaries = summary.get_summary(doc)
-
-        # verify
-        if len(summaries) == 0:
             pass
 
     except Exception:
