@@ -26,5 +26,6 @@ def test_vectorstores() -> None:
             "Qdrant",  # Removed from vectorstores module
             "Pinecone",  # Removed from vectorstores module
             "Neo4jVector",  # Removed from vectorstores module
+            "MongoDBAtlasVectorSearch",  # Removed from vectorstores module
         ]:
             assert issubclass(getattr(vectorstores, cls), VectorStore)

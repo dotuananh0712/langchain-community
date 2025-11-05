@@ -178,9 +178,6 @@ if TYPE_CHECKING:
     from langchain_community.vectorstores.momento_vector_index import (
         MomentoVectorIndex,
     )
-    from langchain_community.vectorstores.mongodb_atlas import (
-        MongoDBAtlasVectorSearch,
-    )
     from langchain_community.vectorstores.myscale import (
         MyScale,
         MyScaleSettings,
@@ -348,7 +345,6 @@ __all__ = [
     "Meilisearch",
     "Milvus",
     "MomentoVectorIndex",
-    "MongoDBAtlasVectorSearch",
     "MyScale",
     "MyScaleSettings",
     "NeuralDBClientVectorStore",
@@ -446,7 +442,6 @@ _module_lookup = {
     "Meilisearch": "langchain_community.vectorstores.meilisearch",
     "Milvus": "langchain_community.vectorstores.milvus",
     "MomentoVectorIndex": "langchain_community.vectorstores.momento_vector_index",
-    "MongoDBAtlasVectorSearch": "langchain_community.vectorstores.mongodb_atlas",
     "MyScale": "langchain_community.vectorstores.myscale",
     "MyScaleSettings": "langchain_community.vectorstores.myscale",
     "NeuralDBClientVectorStore": "langchain_community.vectorstores.thirdai_neuraldb",

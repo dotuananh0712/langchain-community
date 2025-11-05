@@ -59,7 +59,6 @@ EXPECTED_ALL = [
     "Meilisearch",
     "Milvus",
     "MomentoVectorIndex",
-    "MongoDBAtlasVectorSearch",
     "MyScale",
     "MyScaleSettings",
     "NeuralDBClientVectorStore",
