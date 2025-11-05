@@ -14,7 +14,7 @@ from typing import (
     cast,
 )
 
-from langchain_core._api import deprecated, warn_deprecated
+from langchain_core._api import warn_deprecated
 from sqlalchemy import Column, Integer, Text, delete, select
 
 try:
@@ -145,11 +145,6 @@ class SQLChatMessageHistory(BaseChatMessageHistory):
             # await async_message_history.aget_messages()
 
     """
-
-    @property
-    @deprecated("0.2.2", removal="1.0", alternative="session_maker")
-    def Session(self) -> Union[scoped_session, async_sessionmaker]:
-        return self.session_maker
 
     def __init__(
         self,
