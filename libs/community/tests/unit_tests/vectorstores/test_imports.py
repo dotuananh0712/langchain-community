@@ -42,7 +42,6 @@ EXPECTED_ALL = [
     "ElasticsearchStore",
     "Epsilla",
     "FAISS",
-    "HanaDB",
     "Hologres",
     "InMemoryVectorStore",
     "InfinispanVS",

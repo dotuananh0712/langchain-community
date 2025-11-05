@@ -116,9 +116,6 @@ if TYPE_CHECKING:
     from langchain_community.vectorstores.faiss import (
         FAISS,
     )
-    from langchain_community.vectorstores.hanavector import (
-        HanaDB,
-    )
     from langchain_community.vectorstores.hologres import (
         Hologres,
     )
@@ -308,7 +305,6 @@ __all__ = [
     "ElasticsearchStore",
     "Epsilla",
     "FAISS",
-    "HanaDB",
     "Hologres",
     "InMemoryVectorStore",
     "InfinispanVS",
@@ -403,7 +399,6 @@ _module_lookup = {
     "ElasticsearchStore": "langchain_community.vectorstores.elasticsearch",
     "Epsilla": "langchain_community.vectorstores.epsilla",
     "FAISS": "langchain_community.vectorstores.faiss",
-    "HanaDB": "langchain_community.vectorstores.hanavector",
     "Hologres": "langchain_community.vectorstores.hologres",
     "InfinispanVS": "langchain_community.vectorstores.infinispanvs",
     "InMemoryVectorStore": "langchain_community.vectorstores.inmemory",
