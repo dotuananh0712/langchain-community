@@ -322,8 +322,6 @@ def standardize_model_name(
 
     Args:
         model_name: Model name to standardize.
-        is_completion: Whether the model is used for completion or not.
-            Defaults to False. Deprecated in favor of ``token_type``.
         token_type: Token type. Defaults to ``TokenType.PROMPT``.
 
     Returns:
@@ -377,8 +375,6 @@ def get_openai_token_cost_for_model(
     Args:
         model_name: Name of the model
         num_tokens: Number of tokens.
-        is_completion: Whether the model is used for completion or not.
-            Defaults to False. Deprecated in favor of ``token_type``.
         token_type: Token type. Defaults to ``TokenType.PROMPT``.
 
     Returns:
