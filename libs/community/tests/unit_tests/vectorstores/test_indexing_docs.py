@@ -76,7 +76,6 @@ def test_compatible_vectorstore_documentation() -> None:
         "MomentoVectorIndex",
         "MyScale",
         "OpenSearchVectorSearch",
-        "OracleVS",
         "PGVector",
         "Redis",
         "Relyt",

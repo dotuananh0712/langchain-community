@@ -66,7 +66,6 @@ EXPECTED_ALL = [
     "NeuralDBClientVectorStore",
     "NeuralDBVectorStore",
     "OpenSearchVectorSearch",
-    "OracleVS",
     "PGEmbedding",
     "PGVector",
     "PathwayVectorClient",
