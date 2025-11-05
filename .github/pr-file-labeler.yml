@@ -145,3 +145,13 @@ cache:
   - changed-files:
       - any-glob-to-any-file:
           - "libs/community/cache/**/*"
+
+infra:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/**/*"
+          - "*.yml"
+          - "*.yaml"
+          - "pyproject.toml"
+          - "Makefile"
+          - ".gitignore"
