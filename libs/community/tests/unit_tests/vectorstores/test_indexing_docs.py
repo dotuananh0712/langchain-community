@@ -61,7 +61,6 @@ def test_compatible_vectorstore_documentation() -> None:
         "Chroma",
         "CouchbaseVectorStore",
         "DashVector",
-        "DatabricksVectorSearch",
         "TiDBVectorStore",
         "Dingo",
         "DocumentDBVectorSearch",

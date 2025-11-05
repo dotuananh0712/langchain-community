@@ -28,7 +28,6 @@ EXPECTED_ALL = [
     "ClickhouseSettings",
     "CouchbaseVectorStore",
     "DashVector",
-    "DatabricksVectorSearch",
     "Dingo",
     "DistanceStrategy",
     "DocArrayHnswSearch",
