@@ -4,7 +4,6 @@ import threading
 from enum import Enum, auto
 from typing import Any, Dict, List
 
-from langchain_core._api import warn_deprecated
 from langchain_core.callbacks import BaseCallbackHandler
 from langchain_core.messages import AIMessage
 from langchain_core.outputs import ChatGeneration, LLMResult
@@ -315,7 +314,6 @@ class TokenType(Enum):
 
 def standardize_model_name(
     model_name: str,
-    is_completion: bool = False,
     *,
     token_type: TokenType = TokenType.PROMPT,
 ) -> str:
@@ -332,17 +330,6 @@ def standardize_model_name(
         Standardized model name.
 
     """
-    if is_completion:
-        warn_deprecated(
-            since="0.3.13",
-            message=(
-                "is_completion is deprecated. Use token_type instead. Example:\n\n"
-                "from langchain_community.callbacks.openai_info import TokenType\n\n"
-                "standardize_model_name('gpt-4o', token_type=TokenType.COMPLETION)\n"
-            ),
-            removal="1.0",
-        )
-        token_type = TokenType.COMPLETION
     model_name = model_name.lower()
     if ".ft-" in model_name:
         model_name = model_name.split(".ft-")[0] + "-azure-finetuned"
@@ -381,7 +368,6 @@ def standardize_model_name(
 def get_openai_token_cost_for_model(
     model_name: str,
     num_tokens: int,
-    is_completion: bool = False,
     *,
     token_type: TokenType = TokenType.PROMPT,
 ) -> float:
@@ -398,17 +384,6 @@ def get_openai_token_cost_for_model(
     Returns:
         Cost in USD.
     """
-    if is_completion:
-        warn_deprecated(
-            since="0.3.13",
-            message=(
-                "is_completion is deprecated. Use token_type instead. Example:\n\n"
-                "from langchain_community.callbacks.openai_info import TokenType\n\n"
-                "get_openai_token_cost_for_model('gpt-4o', 10, token_type=TokenType.COMPLETION)\n"  # noqa: E501
-            ),
-            removal="1.0",
-        )
-        token_type = TokenType.COMPLETION
     model_name = standardize_model_name(model_name, token_type=token_type)
     if model_name not in MODEL_COST_PER_1K_TOKENS:
         raise ValueError(
