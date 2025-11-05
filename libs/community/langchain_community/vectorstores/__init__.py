@@ -206,9 +206,6 @@ if TYPE_CHECKING:
     from langchain_community.vectorstores.pinecone import (
         Pinecone,
     )
-    from langchain_community.vectorstores.qdrant import (
-        Qdrant,
-    )
     from langchain_community.vectorstores.redis import (
         Redis,
     )
@@ -372,7 +369,6 @@ __all__ = [
     "PGVector",
     "PathwayVectorClient",
     "Pinecone",
-    "Qdrant",
     "Redis",
     "Relyt",
     "Rockset",
@@ -474,7 +470,6 @@ _module_lookup = {
     "PGEmbedding": "langchain_community.vectorstores.pgembedding",
     "PGVector": "langchain_community.vectorstores.pgvector",
     "Pinecone": "langchain_community.vectorstores.pinecone",
-    "Qdrant": "langchain_community.vectorstores.qdrant",
     "Redis": "langchain_community.vectorstores.redis",
     "Relyt": "langchain_community.vectorstores.relyt",
     "Rockset": "langchain_community.vectorstores.rocksetdb",

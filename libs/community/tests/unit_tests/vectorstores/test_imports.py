@@ -71,7 +71,6 @@ EXPECTED_ALL = [
     "PGVector",
     "PathwayVectorClient",
     "Pinecone",
-    "Qdrant",
     "Redis",
     "Relyt",
     "Rockset",

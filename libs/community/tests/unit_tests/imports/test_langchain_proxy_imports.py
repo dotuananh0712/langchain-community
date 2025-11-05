@@ -23,5 +23,6 @@ def test_vectorstores() -> None:
             "AzureCosmosDBVectorSearch",
             "Tigris",  # Was removed upstream but haven't released yet
             "Weaviate",  # Removed from vectorstores module
+            "Qdrant",  # Removed from vectorstores module
         ]:
             assert issubclass(getattr(vectorstores, cls), VectorStore)

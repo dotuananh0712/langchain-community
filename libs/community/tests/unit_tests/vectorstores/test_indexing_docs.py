@@ -79,7 +79,6 @@ def test_compatible_vectorstore_documentation() -> None:
         "OracleVS",
         "PGVector",
         "Pinecone",
-        "Qdrant",
         "Redis",
         "Relyt",
         "Rockset",
