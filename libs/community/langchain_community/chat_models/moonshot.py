@@ -172,9 +172,10 @@ class MoonshotChat(MoonshotCommon, ChatOpenAI):  # type: ignore[misc]
 
         client_params = {
             "api_key": values["moonshot_api_key"].get_secret_value(),
-            "base_url": values["base_url"]
-            if "base_url" in values
-            else MOONSHOT_SERVICE_URL_BASE,
+            "base_url": values.get("base_url")
+            or values.get("api_base")
+            or values.get("openai_api_base")
+            or MOONSHOT_SERVICE_URL_BASE,
         }
 
         if not values.get("client"):
